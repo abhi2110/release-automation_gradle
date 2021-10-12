@@ -18,4 +18,4 @@ jobs:
 
   # Execute unit tests
       - name: Unit Test
-        run: ./gradlew CalculatorTest.java
+        run: ./gradlew src/test/CalculatorTest.java

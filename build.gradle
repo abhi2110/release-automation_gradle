@@ -20,7 +20,7 @@ test {
 
 apply plugin: 'checkstyle'
 checkstyle {
-    toolVersion '7.8.1'
+    toolVersion '8.16'
     configFile file("config/checkstyle/checkstyle.xml")
 }
 checkstyleMain {

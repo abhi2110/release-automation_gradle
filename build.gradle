@@ -35,8 +35,4 @@ pmd {
   ignoreFailures = true
   sourceSets = [sourceSets.main]
   reportsDir = file("$project.buildDir/reports/pmd")
-  ruleSets = [
-    "basic",
-    "braces"
-  ]
 }

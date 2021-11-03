@@ -32,7 +32,11 @@ checkstyleTest {
 
 apply plugin: 'pmd'
 pmd {
-  toolVersion = pmdVersion
-  ruleSetConfig = rootProject.resources.text.fromFile('etc/pmd/ruleset.xml')
   ignoreFailures = true
+  sourceSets = [sourceSets.main]
+  reportsDir = file("$project.buildDir/reports/pmd")
+  ruleSets = [
+    "basic",
+    "braces"
+  ]
 }

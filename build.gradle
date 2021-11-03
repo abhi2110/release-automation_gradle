@@ -12,7 +12,6 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0' 
-    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.10.1'
 }
 
 test {
@@ -31,8 +30,9 @@ checkstyleTest {
     source ='src/test/java'
 }
 
-
-apply plugin: 'spotbugs'
-spotbugs {
-  toolVersion = '4.4.2'
+apply plugin: 'pmd'
+pmd {
+  toolVersion = pmdVersion
+  ruleSetConfig = rootProject.resources.text.fromFile('etc/pmd/ruleset.xml')
+  ignoreFailures = true
 }

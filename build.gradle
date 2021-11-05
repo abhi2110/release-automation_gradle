@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.spotbugs" version "5.0.0-beta.6"
 }
 
 group 'org.example'
@@ -12,6 +13,7 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0' 
+    classpath "com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.0-beta.6"
 }
 
 test {
@@ -36,3 +38,5 @@ pmd {
   sourceSets = [sourceSets.main]
   reportsDir = file("$project.buildDir/reports/pmd")
 }
+
+apply plugin: "com.github.spotbugs"
